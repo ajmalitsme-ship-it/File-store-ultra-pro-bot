@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Store Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="/">Dashboard</a>
+    <a href="/admins">Admins</a>
+    <a href="/users">Users</a>
+    <a href="/premium">Premium</a>
+    <a href="/settings">Settings</a>
+    <a href="/broadcast">Broadcast</a>
+    <a href="/logs">Logs</a>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="main">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
