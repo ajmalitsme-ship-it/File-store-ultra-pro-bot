@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<div class="card-grid">
+    <div class="card">
+        <h3>Total Users</h3>
+        <p>{{ users }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Files</h3>
+        <p>{{ files }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Force Channel</h3>
+        <p>{{ settings.force_channel }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Force Join</h3>
+        <p>{{ settings.force_join_request }}</p>
+    </div>
+</div>
+
+{% endblock %}
