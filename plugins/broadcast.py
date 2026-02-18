@@ -3,6 +3,7 @@ from database.users import get_all_users
 from database.admins import is_admin
 from database.logs import add_log
 
+
 @Client.on_message(filters.command("broadcast"))
 async def broadcast_handler(client, message):
 
@@ -10,7 +11,7 @@ async def broadcast_handler(client, message):
         return
 
     if len(message.command) < 2:
-        await message.reply("Usage: /broadcast Your message here")
+        await message.reply("Usage: /broadcast your message")
         return
 
     text = message.text.split(None, 1)[1]
@@ -27,7 +28,7 @@ async def broadcast_handler(client, message):
     await add_log(
         action="broadcast",
         user_id=message.from_user.id,
-        extra={"total_sent": count}
+        extra={"sent_to": count}
     )
 
     await message.reply(f"✅ Broadcast sent to {count} users.")
