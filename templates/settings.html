@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Bot Settings</h1>
+
+<form method="POST" class="form-box">
+
+    <label>Force Channel Username</label>
+    <input type="text" name="force_channel"
+           value="{{ settings.force_channel or '' }}">
+
+    <label>
+        <input type="checkbox" name="force_join"
+        {% if settings.force_join_request %}checked{% endif %}>
+        Enable Force Join Request
+    </label>
+
+    <button type="submit">Save Settings</button>
+
+</form>
+
+{% endblock %}
