@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Broadcast Message</h1>
+
+<form method="POST" class="form-box">
+    <textarea name="message" rows="6" placeholder="Enter message here..." required></textarea>
+    <button type="submit">Send Broadcast</button>
+</form>
+
+{% endblock %}
