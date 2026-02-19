@@ -9,20 +9,20 @@ load_dotenv()
 # 🔹 TELEGRAM BOT CONFIGURATION
 # ==========================================================
 
-API_ID = int(os.getenv("API_ID", 0))
-API_HASH = os.getenv("API_HASH", "")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+API_ID = int(os.getenv("API_ID", 27806628))
+API_HASH = os.getenv("API_HASH", "25d88301e886b82826a525b7cf52e090")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8425633488:AAFWj_B5YLm-4JdYHZAM1atUUyK-ohuNAI4")
 
-BOT_USERNAME = os.getenv("BOT_USERNAME", "")
-OWNER_ID = int(os.getenv("OWNER_ID", 0))
-OWNER_USERNAME = os.getenv("OWNER_USERNAME", "")
+BOT_USERNAME = os.getenv("BOT_USERNAME", "file_store_bot")
+OWNER_ID = int(os.getenv("OWNER_ID", 8525952693))
+OWNER_USERNAME = os.getenv("OWNER_USERNAME", "funnytamilan")
 
 
 # ==========================================================
 # 🔹 DATABASE CONFIGURATION
 # ==========================================================
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://127.0.0.1:27017")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://Bosshub:JMaff0WvazwNxKky@cluster0.l0xcoc1.mongodb.net/?appName=Cluster0")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "file_store_bot")
 
 # Optional Redis (for high traffic scaling)
@@ -33,11 +33,11 @@ REDIS_URL = os.getenv("REDIS_URL", None)
 # 🔹 WEB PANEL CONFIGURATION
 # ==========================================================
 
-WEB_URL = os.getenv("WEB_URL", "http://localhost:8000")
+WEB_URL = os.getenv("WEB_URL", "https://file-store-ultra-pro-bot.onrender.com")
 
-FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY", "change_this_flask_secret")
+FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY, "8d5c54afbfd5d480274d661f60f6c7a9d8d302184e3232d5")
 
-ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "change_this_admin_password")
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "0007")
 
 SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "True") == "True"
 SESSION_COOKIE_HTTPONLY = True
@@ -74,18 +74,18 @@ LOG_FOLDER = os.getenv("LOG_FOLDER", "logs")
 # 🔹 FORCE SUBSCRIBE SETTINGS
 # ==========================================================
 
-FORCE_SUBSCRIBE_ENABLED = os.getenv("FORCE_SUBSCRIBE_ENABLED", "False") == "True"
+FORCE_SUBSCRIBE_ENABLED = os.getenv("FORCE_SUBSCRIBE_ENABLED", "True") == "True"
 
-DEFAULT_FORCE_CHANNEL = os.getenv("DEFAULT_FORCE_CHANNEL", "")
+DEFAULT_FORCE_CHANNEL = os.getenv("DEFAULT_FORCE_CHANNEL", "True")
 
-DEFAULT_FORCE_JOIN = os.getenv("DEFAULT_FORCE_JOIN", "False") == "True"
+DEFAULT_FORCE_JOIN = os.getenv("DEFAULT_FORCE_JOIN", "True") == "True"
 
 
 # ==========================================================
 # 🔹 PREMIUM SYSTEM SETTINGS
 # ==========================================================
 
-PREMIUM_ENABLED = os.getenv("PREMIUM_ENABLED", "False") == "True"
+PREMIUM_ENABLED = os.getenv("PREMIUM_ENABLED", "True") == "True"
 
 PREMIUM_DEFAULT_DAYS = int(os.getenv("PREMIUM_DEFAULT_DAYS", 30))
 
