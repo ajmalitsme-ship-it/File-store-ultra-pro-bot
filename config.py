@@ -34,9 +34,7 @@ REDIS_URL = os.getenv("REDIS_URL", None)
 # ==========================================================
 
 WEB_URL = os.getenv("WEB_URL", "https://file-store-ultra-pro-bot.onrender.com")
-
-FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY, "8d5c54afbfd5d480274d661f60f6c7a9d8d302184e3232d5")
-
+FLASK_SECRET_KEY = os.getenv("FLASK_SECRET_KEY")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "0007")
 
 SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "True") == "True"
