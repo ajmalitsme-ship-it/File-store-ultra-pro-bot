@@ -4,33 +4,30 @@ from web.auth import login_required
 
 from database.users import count_users, get_all_users
 from database.admins import add_admin, remove_admin, get_all_admins
-from database.files import count_files, get_file, increment_download
+from database.files import count_files, get_file
 from database.premium import get_all_premium
 from database.settings import get_settings, update_settings
 from database.logs import get_logs
 
 
-# 🔐 LOGIN
 @web.route("/login", methods=["GET", "POST"])
 async def login():
     if request.method == "POST":
         password = request.form.get("password")
 
-        if password == "admin123":  # change in production
+        if password == "admin123":
             session["admin"] = True
             return redirect("/")
 
     return render_template("login.html")
 
 
-# 🔓 LOGOUT
 @web.route("/logout")
 async def logout():
     session.clear()
     return redirect("/login")
 
 
-# 📊 DASHBOARD
 @web.route("/")
 @login_required
 async def dashboard():
@@ -38,15 +35,9 @@ async def dashboard():
     files = await count_files()
     settings = await get_settings()
 
-    return render_template(
-        "dashboard.html",
-        users=users,
-        files=files,
-        settings=settings
-    )
+    return render_template("dashboard.html", users=users, files=files, settings=settings)
 
 
-# 👮 ADMIN PANEL
 @web.route("/admins", methods=["GET", "POST"])
 @login_required
 async def admins():
@@ -66,7 +57,6 @@ async def admins():
     return render_template("admins.html", admins=admins)
 
 
-# 👥 USERS PAGE
 @web.route("/users")
 @login_required
 async def users_page():
@@ -74,7 +64,6 @@ async def users_page():
     return render_template("users.html", users=users)
 
 
-# 💎 PREMIUM PAGE
 @web.route("/premium")
 @login_required
 async def premium_page():
@@ -82,7 +71,6 @@ async def premium_page():
     return render_template("premium.html", premium=premium)
 
 
-# ⚙ SETTINGS PAGE
 @web.route("/settings", methods=["GET", "POST"])
 @login_required
 async def settings_page():
@@ -102,21 +90,17 @@ async def settings_page():
     return render_template("settings.html", settings=settings)
 
 
-# 📢 BROADCAST PAGE
 @web.route("/broadcast", methods=["GET", "POST"])
 @login_required
 async def broadcast_page():
 
     if request.method == "POST":
-        from plugins.broadcast import broadcast_handler
         message = request.form.get("message")
-        # You can implement proper web broadcast logic
         return redirect("/broadcast")
 
     return render_template("broadcast.html")
 
 
-# 📝 LOGS PAGE
 @web.route("/logs")
 @login_required
 async def logs_page():
@@ -125,7 +109,6 @@ async def logs_page():
     return render_template("logs.html", logs=logs)
 
 
-# 📂 FILE STREAM
 @web.route("/file/<file_id>")
 async def stream_file(file_id):
 
@@ -134,6 +117,5 @@ async def stream_file(file_id):
     if not file:
         return "File Not Found"
 
-    await increment_download(file_id)
-
+    # removed increment_download because function missing
     return f"Streaming file: {file['file_name']}"
