@@ -1,6 +1,6 @@
+Flask[async]
 pyrogram
 tgcrypto
-flask
 motor
 gunicorn
 python-dotenv
