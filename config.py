@@ -7,17 +7,17 @@ load_dotenv()
 # 🔹 TELEGRAM BOT CONFIGURATION
 # ==========================================================
 
-API_ID = int(os.getenv("API_ID", 27806628))
-API_HASH = os.getenv("API_HASH", "25d88301e886b82826a525b7cf52e090")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8425633488:AAFWj_B5YLm-4JdYHZAM1atUUyK-ohuNAI4")
-OWNER_ID = int(os.getenv("OWNER_ID", 8525952693))
+API_ID = int(os.getenv("API_ID", 123456789))
+API_HASH = os.getenv("API_HASH", "abc123..")
+BOT_TOKEN = os.getenv("BOT_TOKEN" "12345678:...")
+OWNER_ID = int(os.getenv("OWNER_ID", 81272693))
 
 
 # ==========================================================
 # 🔹 DATABASE CONFIGURATION
 # ==========================================================
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://Bosshub:JMaff0WvazwNxKky@cluster0.l0xcoc1.mongodb.net/?appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://Bosshub:")
 DATABASE_NAME = os.getenv("DATABASE_NAME", "file_store_bot")
 
 
